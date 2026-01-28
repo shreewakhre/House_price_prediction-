@@ -18,23 +18,53 @@ bathrooms = st.slider("Bathrooms", 1, 10, 2)
 floors = st.slider("Floors", 1, 5, 2)
 year_built = st.number_input("Year Built", 1900, 2025, 2010)
 
-location = st.selectbox("Location", ["Downtown", "Suburban", "Urban", "Rural"])
-condition = st.selectbox("Condition", ["Excellent" : 4, "Good" : 3, "Fair" :2, "Poor" : 1])
+# location = st.selectbox("Location", ["Downtown", "Suburban", "Urban", "Rural"])
+# condition = st.selectbox("Condition", ["Excellent" , "Good", "Fair", "Poor"])
+condition_map = st.selectbox{
+    "Poor": 1,
+    "Fair": 2,
+    "Good": 3,
+    "Excellent": 4
+}
 
-garage = st.selectbox("Garage", ["Yes", "No"])
+location_map = st.selection {
+    "Rural": 0,
+    "Urban": 1,
+    "Suburban": 2,
+    "Downtown": 3
+}
+
+garage_map = st.selection {
+    "No": 0,
+    "Yes": 1
+}
+
+
+# garage = st.selectbox("Garage", ["Yes", "No"])
 
 # Predict button
 if st.button("Predict House Price"):
     new_house = pd.DataFrame({
-        "Area": [area],
-        "Bedrooms": [bedrooms],
-        "Bathrooms": [bathrooms],
-        "Floors": [floors],
-        "YearBuilt": [year_built],
-        "Location": [location],
-        "Condition": [condition],
-        "Garage": [garage]
-    })
+    "Area": [area],
+    "Bedrooms": [bedrooms],
+    "Bathrooms": [bathrooms],
+    "Floors": [floors],
+    "YearBuilt": [year_built],
+    "Location": [location_map[location]],
+    "Condition": [condition_map[condition]],
+    "Garage": [garage_map[garage]]
+})
+
+    # new_house = pd.DataFrame({
+    #     "Area": [area],
+    #     "Bedrooms": [bedrooms],
+    #     "Bathrooms": [bathrooms],
+    #     "Floors": [floors],
+    #     "YearBuilt": [year_built],
+    #     "Location": [location],
+    #     "Condition": [condition],
+    #     "Garage": [garage]
+    # })
 
     prediction = model.predict(new_house)
 
