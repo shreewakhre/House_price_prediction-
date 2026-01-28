@@ -12,7 +12,7 @@ st.write("Enter house details to predict the price")
 model = joblib.load("house_price_model.pkl")
 
 # User inputs
-area = st.number_input("Area (sq ft)", min_value=500, max_value=10000, value=3000)
+area = st.number_input("Area (sq ft)", min_value=500, max_value=10000, value=3000, step=100)
 bedrooms = st.slider("Bedrooms", 1, 10, 3)
 bathrooms = st.slider("Bathrooms", 1, 10, 2)
 floors = st.slider("Floors", 1, 5, 2)
