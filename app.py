@@ -19,7 +19,7 @@ floors = st.slider("Floors", 1, 5, 2)
 year_built = st.number_input("Year Built", 1900, 2025, 2010)
 
 location = st.selectbox("Location", ["Downtown", "Suburban", "Urban", "Rural"])
-condition = st.selectbox("Condition", ["Excellent" , "Good", "Fair", "Poor"])
+condition = st.selectbox("Condition", ["Poor","Fair","Good","Excellent"])
 
 
 
