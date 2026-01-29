@@ -67,15 +67,25 @@ garage = st.selectbox("Garage", list(garage_dict.keys()))
 # Predict button
 if st.button("Predict House Price"):
     new_house = pd.DataFrame({
-    "Area": [area],
-    "Bedrooms": [bedrooms],
-    "Bathrooms": [bathrooms],
-    "Floors": [floors],
-    "YearBuilt": [year_built],
-    "Location": [location_map[location]],
-    "Condition": [condition_map[condition]],
-    "Garage": [garage_map[garage]]
-})
+        "Area": [area],
+        "Bedrooms": [bedrooms],
+        "Bathrooms": [bathrooms],
+        "Floors": [floors],
+        "YearBuilt": [year_built],
+        "Location": [location_dict[location]],
+        "Condition": [condition_dict[condition]],
+        "Garage": [garage_dict[garage]]
+    })
+#     new_house = pd.DataFrame({
+#     "Area": [area],
+#     "Bedrooms": [bedrooms],
+#     "Bathrooms": [bathrooms],
+#     "Floors": [floors],
+#     "YearBuilt": [year_built],
+#     "Location": [location_map[location]],
+#     "Condition": [condition_map[condition]],
+#     "Garage": [garage_map[garage]]
+# })
 
     # new_house = pd.DataFrame({
     #     "Area": [area],
