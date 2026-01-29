@@ -20,21 +20,21 @@ year_built = st.number_input("Year Built", 1900, 2025, 2010)
 
 # location = st.selectbox("Location", ["Downtown", "Suburban", "Urban", "Rural"])
 # condition = st.selectbox("Condition", ["Excellent" , "Good", "Fair", "Poor"])
-condition_map = st.selectbox("Candition",
+condition_map = st.selectbox("Candition"
     "Poor": 1,
     "Fair": 2,
     "Good": 3,
     "Excellent": 4
 )
 
-location_map = st.selection ("location",
+location_map = st.selection ("location"
     "Rural": 0,
     "Urban": 1,
     "Suburban": 2,
     "Downtown": 3
 )
 
-garage_map = st.selection ("Garage",
+garage_map = st.selection ("Garage"
     "No": 0,
     "Yes": 1
 )
